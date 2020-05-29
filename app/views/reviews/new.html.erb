@@ -1,5 +1,14 @@
 <h2>Add a new review</h2>
 
+<% if @review.errors.any? %>
+  <h4>...Something went wrong. Please fix these errors:</h4>
+  <ul>
+    <% @review.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for [@product, @review] do |f| %>
   <div class="form-group">
     <%= f.label :Name %>
