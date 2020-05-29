@@ -10,7 +10,7 @@ _This application will show Food Products._
 
 ## Setup/Installation Requirements
 
-* _Clone Repository from GitHub : https://github.com/cheemurakami/volunteer_tracker
+* _Clone Repository from GitHub : https://github.com/cheemurakami/rails_food_products
 * _Open folder in Virtual Studio Code (or your text editor of choice)_
 * _Open your terminal in Virtual Studio Code & type code . this will open all files associated with this app. 
 * _Before you initialize GIT, be sure to delete the already exisiting .git file by running this command in your terminal $rm -rf .git_
@@ -18,31 +18,20 @@ _This application will show Food Products._
 
 ## Behavior Driven Development 
 
-
 |   Behavior Description        |
 |-------------------------------|
-| 1. Creates a new title of project with id. [v]|
-| 2. Saves projects in a database. [v]|
-| 3. Shows all projects. (.all method) [v]|
-| 4. Finds a project by project id from a database. [v]|
-| 5. Updates a project title in a database. [v]|
-| 6. Deletes projects from a database. [v]|
-| 7. Lists all volunteers belong to a project(#volunteer method.)[v]|
-| 8. Creates a new volunteer with id and project_id. [v]|
-| 9. Saves volunteers in a database. [v]|
-| 10. Shows all volunteers. (.all method) [v]|
-| 11. Finds a volunteer by volunteer id from a database. [v]|
-| 12. Updates a volunteer name in a database. [v]|
-| 13. Deletes a volunteer from a database. [v]|
-| 14. Lists all volunteers belong to a project(spec 7.) [v]|
-| 15. User can type and create a project. (add project button)[v]|
-| 16. User can select the project.(link)[v]|
-| 17. User can type and update the name of the project(update button.)[v]|
-| 18. User can delete the project.(delete button)[v]|
-| 19. User can type and add a volunteer(add volunteer button.)[v]|
-| 20. User can select the volunteer's name(link.)[v]|
-| 21. User can type and update the name of the volunteer.(update button)[v]|
-| 22. User can delete the volunteer(delete button.) [v]|
+| 1. Users should be able to add, update and delete new products. [v]|
+| 2. Users should be able to click an individual product to see its detail page. [v]|
+| 3. Users should be able to add a review to a product. [v]|
+| 4. All fields should be filled out, including rating. [v]|
+| 5. Rating can only be an integer between 1 and 5. [v]|
+| 6. The review's content_body must be between 50 and 250 characters. [v]|
+| 7. All products are automatically titleized (first letter of each word capitalized) before they are saved to the database. [v]|
+| 8. Seeds data for 50 products and 250 9eviews. Use Faker with a loop to seed the database. [v]|
+| 9. Add scopes to display information of the three most recently added products. [v]|
+
+
+
 
 ## Known Bugs
 
@@ -61,27 +50,3 @@ _Ruby, Gem, Pry_
 *MIT LICENSE*
 
 Copyright (c) 2020 **Chisato Murakami**
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

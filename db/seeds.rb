@@ -11,9 +11,9 @@ Review.destroy_all
 
 
 
-3.times do 
+50.times do 
   product = Product.create!(name: Faker::Food.fruits, cost: Faker::Number.decimal(l_digits: 1), country_of_origin: Faker::Address.country)
-  6.times do
+  250.times do
     Review.create!(author: Faker::TvShows::SouthPark.character , content_body: Faker::Lorem.characters(number: 50..250), product: product, rating:Faker::Number.between(from: 1, to: 5))
   end
 end

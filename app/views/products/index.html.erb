@@ -3,7 +3,11 @@
 <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
+      <li>
+        <%= link_to product.name, product_path(product) %> 
+        <% if @most_recent_products.include?(product) %> New!!!
+        <% end %>  
+      </li>
     <% end %>
   </ul>
 <% else %>

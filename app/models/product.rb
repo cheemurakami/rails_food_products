@@ -6,6 +6,8 @@ class Product < ApplicationRecord
 
   before_save(:titleize_product)
 
+  scope :three_most_recent, -> {order(created_at: :desc).limit(3)}
+
   private
   def titleize_product
     self.name = self.name.titleize
