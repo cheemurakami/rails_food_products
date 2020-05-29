@@ -4,12 +4,12 @@
   <ul>
     <% @products.each do |product| %>
       <li>
-        <%= link_to product.name, product_path(product) %> 
+        <%= link_to product.name, product_path(product) %> made in <%= product.country_of_origin %> 
           <% if @most_recent_products.include?(product) %> 
-            New!!!
+           <span class="text-primary">  New!!! </span>
           <% end %>  
           <% if @most_reviews.include?(product) %> 
-            Hot!!!
+            <span class="text-danger">  Hot!!! </span>
           <% end %>  
       </li>
     <% end %>

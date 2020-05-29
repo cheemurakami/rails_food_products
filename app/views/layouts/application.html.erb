@@ -10,8 +10,16 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
-    </div>
+      <header class='clearfix'>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+          <ul>
+              <li><%= link_to "Home", products_path %></li>
+              <li><%= link_to "Add Product", new_product_path %></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">
+        <%= yield %>
+      </div>
   </body>
 </html>
