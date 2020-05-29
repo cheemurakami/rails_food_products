@@ -33,6 +33,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+    render :show
+  end
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
