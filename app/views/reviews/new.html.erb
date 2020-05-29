@@ -1,0 +1,19 @@
+<h2>Add a new review</h2>
+
+<%= form_for @product do |f| %>
+  <div class="form-group">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content_body %>
+    <%= f.text_field :content_body %>
+  </div>
+  <div class="form-group">
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </div>
+  <div>
+    <%= f.submit  %>
+  </div>
+<% end %>
