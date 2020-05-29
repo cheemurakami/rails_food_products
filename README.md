@@ -6,7 +6,7 @@
 
 ## Description
 
-_This application will show a Volunteer Tracker._ 
+_This application will show Food Products._ 
 
 ## Setup/Installation Requirements
 
@@ -62,14 +62,6 @@ _Ruby, Gem, Pry_
 
 Copyright (c) 2020 **Chisato Murakami**
 
-
-
-
-
-
-
-
-5/29/20
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
