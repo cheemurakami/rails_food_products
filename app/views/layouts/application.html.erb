@@ -10,16 +10,22 @@
   </head>
 
   <body>
-      <header class='clearfix'>
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-          <ul>
-              <li><%= link_to "Home", products_path %></li>
-              <li><%= link_to "Add Product", new_product_path %></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="content">
-        <%= yield %>
+      <div class="container">
+        <header class='clearfix'>
+          <div class="left-nav">
+            <ul>
+              <li> <%= link_to "Home", products_path %></li>
+            </ul>
+          </div>
+          <div class="right-nav">
+            <ul>
+              <li> <%= link_to "Add Product", new_product_path %></li>
+            </ul>
+          </div>
+        </header>  
+        <div class="content">
+          <%= yield %>
+        </div>
       </div>
   </body>
 </html>
