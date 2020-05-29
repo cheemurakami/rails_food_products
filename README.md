@@ -6,7 +6,7 @@
 
 ## Description
 
-_This application will show Food Products._ 
+_This application will a simple Food Products Website._ 
 
 ## Setup/Installation Requirements
 
@@ -33,7 +33,6 @@ _This application will show Food Products._
 
 
 
-
 ## Known Bugs
 
 _No known bugs at this time_
@@ -44,7 +43,7 @@ _If you have any questions or any issues please feel free to submit an issue her
 
 ## Technologies Used
 
-_Ruby, Gem, Pry_ 
+_Ruby, Gem, Pry, Bootstrap_ 
 
 
 ### Licenses
