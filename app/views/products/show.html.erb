@@ -2,6 +2,19 @@
 <h4><%= "Cost: $ #{@product.cost}" %></h4>
 <h4><%= "Country of origin: #{@product.country_of_origin}" %></h4>
 
+<% if @product.reviews.any? %>
+  <h4> Here are the reviews for this product: </h4>
+  <% @product.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.author, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No reviews are listed for this product.</p>
+<% end %>
+
 <p><%= link_to "Edit this product", edit_product_path(@product) %></p>
 <p><%= link_to "Delete", product_path(@product),
                          :data => {:confirm => "You sure?",
