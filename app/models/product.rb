@@ -8,6 +8,9 @@ class Product < ApplicationRecord
 
   scope :three_most_recent, -> {order(created_at: :desc).limit(3)}
 
+  scope :three_most_reviews, -> {select("products.*, count(reviews.id) as most_review").joins(:reviews).group("products.id").order("most_review DESC").limit(3)}
+
+
   private
   def titleize_product
     self.name = self.name.titleize

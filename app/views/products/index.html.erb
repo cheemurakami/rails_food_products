@@ -5,8 +5,12 @@
     <% @products.each do |product| %>
       <li>
         <%= link_to product.name, product_path(product) %> 
-        <% if @most_recent_products.include?(product) %> New!!!
-        <% end %>  
+          <% if @most_recent_products.include?(product) %> 
+            New!!!
+          <% end %>  
+          <% if @most_reviews.include?(product) %> 
+            Hot!!!
+          <% end %>  
       </li>
     <% end %>
   </ul>

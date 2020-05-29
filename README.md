@@ -29,6 +29,7 @@ _This application will show Food Products._
 | 7. All products are automatically titleized (first letter of each word capitalized) before they are saved to the database. [v]|
 | 8. Seeds data for 50 products and 250 9eviews. Use Faker with a loop to seed the database. [v]|
 | 9. Add scopes to display information of the three most recently added products. [v]|
+| 10. Add scopes to display information of the product with the threemost reviews. [v]|
 
 
 
