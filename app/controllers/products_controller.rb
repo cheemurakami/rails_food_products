@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
     render :index
   end
 
+  def home
+    render :home
+  end
+
   def new
     @product = Product.new
     render :new
