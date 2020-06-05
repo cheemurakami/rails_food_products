@@ -10,6 +10,7 @@ class Product < ApplicationRecord
 
   scope :three_most_reviews, -> {select("products.*, count(reviews.id) as most_review").joins(:reviews).group("products.id").order("most_review DESC").limit(3)}
 
+  scope :made_in_usa, -> {where(country_of_origin: "United States Of America")}
 
   private
   def titleize_product
