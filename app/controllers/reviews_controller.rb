@@ -38,6 +38,8 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review updated!"
       redirect_to product_path(@review.product)
     else
+      flash[:notice] = "Review has not been updated!"
+      @product = @review.product
       render :edit
     end
   end
@@ -45,6 +47,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
+    flash[:notice] = "Review deleted"
     redirect_to product_path(@review.product)
   end
 

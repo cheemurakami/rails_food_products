@@ -46,11 +46,12 @@ describe "the add a product reviews" do
     fill_in 'Rating', :with => 5
     click_on "Update Review"
     expect(page).to have_content "Review updated!"
-    click_on "Delete"
-    expect(page).to have_content "Current products"
+    click_on "5 star rating by Kiwi"
+    click_on "Delete review"
+    expect(page).to have_content "Review deleted"
   end
 
-  it "deletes a review" do
+  it "will go back to edit page when the input box was empty" do
     visit product_path(@product)
     click_on "Add a review to this product"
     fill_in 'Name', :with => 'Kiwi'
@@ -58,8 +59,10 @@ describe "the add a product reviews" do
     fill_in 'Rate this product', :with => 4
     click_on "Create Review"
     expect(page).to have_content "New review added!"
-
+    click_on "4 star rating by Kiwi"
+    click_on "Edit review"
+    fill_in 'Rating', :with => ""
+    click_on "Update Review"
+    expect(page).to have_content "Review has not been updated"
   end
-
-  
 end

@@ -38,7 +38,7 @@ describe "the add a product process" do
     click_on "Create Product"
     expect(page).to have_content "Country of origin can't be blank"
   end
-  it "deletes the product" do
+  it "updates and deletes the product" do
     visit products_path
     click_link "Create new product"
     fill_in 'Name', :with => 'Takuan'
@@ -51,5 +51,23 @@ describe "the add a product process" do
     fill_in 'Cost', :with => 2
     click_on "Update Product"
     expect(page).to have_content "Product updated!"
+    click_on "Takuan"
+    click_link "Delete"
+    expect(page).to have_content "Product deleted!"
+  end
+
+  it "will go back to edit page when the input box was empty" do
+    visit products_path
+    click_link "Create new product"
+    fill_in 'Name', :with => 'Takuan'
+    fill_in 'Cost', :with => 1
+    fill_in 'Country of origin', :with => 'China'
+    click_on "Create Product"
+    expect(page).to have_content 'Takuan'
+    click_on "Takuan"
+    click_link "Edit this product"
+    fill_in 'Cost', :with => ""
+    click_on "Update Product"
+    expect(page).to have_content "Edit this product"
   end
 end
