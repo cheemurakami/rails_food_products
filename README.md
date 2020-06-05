@@ -1,6 +1,6 @@
 # _Mario's Food Products_
 
-#### _A practice application using Ruby, Gem & Pry. DATE 5/29/20_
+#### _A practice application using Ruby, Gem & Pry. DATE 5/29/20, 6/5/20_
 
 #### By _**Chisato Murakami**_
 
@@ -30,7 +30,13 @@ _This application will a simple Food Products Website._
 | 8. Seeds data for 50 products and 250 9eviews. Use Faker with a loop to seed the database. [v]|
 | 9. Add scopes to display information of the three most recently added products. [v]|
 | 10. Add scopes to display information of the product with the threemost reviews. [v]|
-
+| **Specs below include user authentication and authorization**|
+| 11. As an admin, I should be able to log in and log out of the application. [v]|
+| 12. As an admin, I should be able to add, update and delete products. [v]|
+| 13. As an admin, I should be able to add reviews. [v]|
+| 14. As an admin, I want to ensure that other users don't have access to CRUD functionality. [v]|
+| 15. As a user, I want to be able to create an account and add a review to a product. (A product can have many comments.) This is the only CRUD functionality a user can have. [v]|
+| 16. All products made in the USA for buyers that want to buy local products. [v]|
 
 
 ## Known Bugs
