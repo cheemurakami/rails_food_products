@@ -5,7 +5,6 @@ class Product < ApplicationRecord
   validates :country_of_origin, presence: true
   has_one_attached :product_photo
 
-
   before_save(:titleize_product)
 
   scope :three_most_recent, -> {order(created_at: :desc).limit(3)}
