@@ -2,15 +2,16 @@
 <h4><%= "Cost: $ #{@product.cost}" %></h4>
 <h4><%= "Country of origin: #{@product.country_of_origin}" %></h4>
 
+<% if @product.product_photo.attached? %>
+  <%= image_tag @product.product_photo, :size =>'200x200' %>
+<% end %>
+
 <% if @product.reviews.any? %>
   <h4> The reviews for this product: </h4>
   <% @product.reviews.each do |review| %>
     <ul>
       <li>
         <p><%= link_to "#{review.rating} star rating by #{ review.author}", product_review_path(@product, review) %> </p>
-        <% if @product.product_photo.attached? %>
-          <%= image_tag @product.product_cover_photo %>
-        <% end %>
       </li>
     </ul>
   <% end %>
