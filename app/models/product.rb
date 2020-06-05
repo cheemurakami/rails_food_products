@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :cost, presence: true
   validates :country_of_origin, presence: true
+  has_one_attached :product_photo
+
 
   before_save(:titleize_product)
 

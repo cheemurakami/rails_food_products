@@ -8,6 +8,9 @@
     <ul>
       <li>
         <p><%= link_to "#{review.rating} star rating by #{ review.author}", product_review_path(@product, review) %> </p>
+        <% if @product.product_photo.attached? %>
+          <%= image_tag @product.product_cover_photo %>
+        <% end %>
       </li>
     </ul>
   <% end %>
