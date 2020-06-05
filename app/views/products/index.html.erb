@@ -1,5 +1,20 @@
 <h1>Mario's Food Products</h1>
 <h3>Current products</h3>
+
+<h3>Made in USA</h3>
+<% if @made_in_usa.any? %>
+  <ul>
+    <% @made_in_usa.each do |product| %>
+      <li>
+        <%= link_to product.name, product_path(product) %>
+      </li>
+      <% end %>
+  </ul>
+<% else %>
+   <p>There are no made in USA products yet.</p>
+<% end %>
+  
+<h3>Others</h3>
 <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>

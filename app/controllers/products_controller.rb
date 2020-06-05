@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     @products = Product.all.order("created_at DESC")
     @most_recent_products = Product.three_most_recent
     @most_reviews = Product.three_most_reviews
+    @made_in_usa = Product.made_in_usa
     render :index
   end
 
