@@ -3,6 +3,11 @@ require "rails_helper"
 
 describe "the add a product reviews" do
   before(:each) do
+    admin_user = User.create(email: "kiwi@example.com", password: "123456", admin: true)
+    visit new_user_session_path
+    fill_in "Email", :with => "kiwi@example.com"
+    fill_in "Password", :with => "123456"
+    click_on "Log in"    
     @product = Product.create(name:"Takuan", cost: 1, country_of_origin: "China")
   end
 
