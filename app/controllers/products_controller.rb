@@ -1,8 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, :only => [:new]
-  before_action :only => [:new, :edit, :create, :destroy, :update] do
-    redirect_to products_path unless current_user && current_user.admin
-  end
+  before_action :authenticate_user!, :except => [:home]
+  before_action :authorized_admin?, :only => [:new, :edit, :create, :destroy, :update]
   
   def index
     @products = Product.all.order("created_at DESC")
@@ -23,6 +21,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:notice] = "New product added!"
       redirect_to products_path
     else
       render :new

@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
-  
+  before_action :authenticate_user!
+  before_action :authorized_admin?, :only => [:edit, :destroy, :update]
+
   def new
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
@@ -10,6 +12,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
+      flash[:notice] = "New review added!"
       redirect_to product_path(@product)
     else
       
