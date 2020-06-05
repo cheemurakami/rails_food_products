@@ -33,5 +33,33 @@ describe "the add a product reviews" do
     expect(page).to have_content "Content body Contents must be between 50 and 250 characters"
   end
 
+  it "edits, updates, and destroys a review" do
+    visit product_path(@product)
+    click_on "Add a review to this product"
+    fill_in 'Name', :with => 'Kiwi'
+    fill_in 'Content body', :with => 'adlkaw ljkawe lknasd ljawd ,nasd lojaw ;piawds;l japojwd kjdc sdasd sdoih'
+    fill_in 'Rate this product', :with => 4
+    click_on "Create Review"
+    expect(page).to have_content "New review added!"
+    click_on "4 star rating by Kiwi"
+    click_on "Edit review"
+    fill_in 'Rating', :with => 5
+    click_on "Update Review"
+    expect(page).to have_content "Review updated!"
+    click_on "Delete"
+    expect(page).to have_content "Current products"
+  end
+
+  it "deletes a review" do
+    visit product_path(@product)
+    click_on "Add a review to this product"
+    fill_in 'Name', :with => 'Kiwi'
+    fill_in 'Content body', :with => 'adlkaw ljkawe lknasd ljawd ,nasd lojaw ;piawds;l japojwd kjdc sdasd sdoih'
+    fill_in 'Rate this product', :with => 4
+    click_on "Create Review"
+    expect(page).to have_content "New review added!"
+
+  end
+
   
 end
