@@ -11,7 +11,26 @@
     <%= link_to "See Products", products_path, class:"btn btn-success" %>
   </div>
 
-    <div class="top-img">
-      <img src="https://www.heart.org/-/media/aha/h4gm/article-images/fruit-and-vegetables.jpg?la=en&hash=65387BD7AEEF9C37F30838E6A897796400EE80F4" >
+  <div class="row">
+
+    <div class="col-sm-6">
+      <div class="most-recent">
+        <h3>Most recent products</h3>
+          <% @most_recent_products.each do |most_recent| %>
+            <li> <%= most_recent.name %> NEW!!!</li>
+          <% end%>
+      </div>
     </div>
+
+    <div class="col-sm-6">
+      <div class="most-reviewed">
+        <h3>Most reviewed products</h3>
+          <% @most_reviews.each do |most_review| %>
+            <li> <%= most_review.name %> HOT!!!</li>
+          <% end%>
+      </div>
+    </div>
+
+  </div>
+
 </div>

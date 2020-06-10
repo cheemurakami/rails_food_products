@@ -4,9 +4,17 @@
   background: white;
   width: 100%;
 }
-.top-img{
-  margin: 30px;
-  opacity: 50%
+.col-sm-6{
+  background-color: white;
+  opacity: 50%;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+body{
+  background-image: url("https://www.heart.org/-/media/aha/h4gm/article-images/fruit-and-vegetables.jpg?la=en&hash=65387BD7AEEF9C37F30838E6A897796400EE80F4");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
   
 }
 

@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
   end
 
   def home
+    @most_recent_products = Product.three_most_recent
+    @most_reviews = Product.three_most_reviews
     render :home
   end
 
@@ -22,10 +24,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.product_photo.attach(params[:product][:product_photo])
-    if @product.save
+    if @product.save!
       flash[:notice] = "New product added!"
       redirect_to products_path
     else
+      flash[:notice] = "Something went wrong"
       render :new
     end
   end
