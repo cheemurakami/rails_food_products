@@ -4,6 +4,7 @@ describe Product do
   before do
     @products = FactoryBot.create_list(:product, 10)
   end
+  
   it { should have_many(:reviews) }
   it { should validate_presence_of :name}
   it { should validate_presence_of :cost}
